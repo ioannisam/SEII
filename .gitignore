@@ -1,0 +1,5 @@
+coverage
+node_modules
+.swagger-codegen
+.swagger-codegen-ignore
+.package-lock.json
