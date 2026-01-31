@@ -31,8 +31,9 @@ PUT -> 200 204
 DELETE -> 200 204
 
 ### PERFORMANCE
-TODO
-
+Have k6 installed
+Edit package.json to include "test:perf": "k6 run k6-tests/load-test.js && k6 run k6-tests/stress-test.js && k6 run k6-tests/spike-test.js" in scripts
+add k6-test directory
 
 ## CI/CD
 

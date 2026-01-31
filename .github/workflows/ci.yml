@@ -23,3 +23,26 @@ jobs:
     
     - name: Run tests
       run: npm test
+    
+
+    
+    - name: Start server
+      run: npm start &
+    
+    - name: Wait for server
+      run: sleep 5
+    
+    - name: Run k6 load test
+      uses: grafana/k6-action@v0.3.1
+      with:
+        filename: k6-tests/load-test.js
+    
+    - name: Run k6 stress test
+      uses: grafana/k6-action@v0.3.1
+      with:
+        filename: k6-tests/stress-test.js
+    
+    - name: Run k6 spike test
+      uses: grafana/k6-action@v0.3.1
+      with:
+        filename: k6-tests/spike-test.js
