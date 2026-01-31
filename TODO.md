@@ -12,6 +12,8 @@ Remove unused variables/ void req
 Add comments
 
 ## TESTING
+
+### ENDPOINTS
 npm -D c8 ava supertest
 Edit package.json to include "test": "c8 ava" in scripts
 
@@ -27,3 +29,11 @@ GET -> 200
 POST -> 201
 PUT -> 200 204
 DELETE -> 200 204
+
+### PERFORMANCE
+TODO
+
+
+## CI/CD
+
+add .github/workflows/ci.yml
