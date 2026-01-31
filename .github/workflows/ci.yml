@@ -43,17 +43,20 @@ jobs:
         echo "Server failed to start within 30 seconds"
         exit 1
     
+    - name: Setup K6
+      uses: grafana/setup-k6-action@v1
+    
     - name: Run k6 load test
-      uses: grafana/k6-action@v0.3.1
+      uses: grafana/run-k6-action@v1
       with:
-        filename: k6-tests/load-test.js
+        path: k6-tests/load-test.js
     
     - name: Run k6 stress test
-      uses: grafana/k6-action@v0.3.1
+      uses: grafana/run-k6-action@v1
       with:
-        filename: k6-tests/stress-test.js
+        path: k6-tests/stress-test.js
     
     - name: Run k6 spike test
-      uses: grafana/k6-action@v0.3.1
+      uses: grafana/run-k6-action@v1
       with:
-        filename: k6-tests/spike-test.js
+        path: k6-tests/spike-test.js
