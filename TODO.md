@@ -14,7 +14,7 @@ Add comments
 ## TESTING
 
 ### ENDPOINTS
-npm -D c8 ava supertest
+npm install -D c8 ava supertest
 Edit package.json to include "test": "c8 ava" in scripts
 
 Create ava tests with c8 and supertest in /test
