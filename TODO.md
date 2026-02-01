@@ -16,10 +16,10 @@ Run:
 
 ## METRICS
 
-- Remove unused variables (void req; // for default.js)
+- Remove unused variables (void req; // for `default.js`)
 - Add comments (/* */ style to cheese density)
 
-- Update status code return values in DefaultService:
+- Update status code return values in `DefaultService.js`:
 ```js
     resolve(examples[Object.keys(examples)[0]]); // old
 ```
@@ -29,15 +29,14 @@ Run:
 ```
 
 ```js
-resolve(utils.respondWithCode(204, {})); //for delete
+    resolve(utils.respondWithCode(204, {})); //for DELETE
 ```
 
 The expected return CODE is:
 - GET -> 200
 - POST -> 201
-- PUT -> 200 204
-- DELETE -> 200 204
-(Use or 200 in all cases)
+- PUT -> 200
+- DELETE -> 204
 
 ## TESTING
 
@@ -50,7 +49,7 @@ The expected return CODE is:
 
 - Edit package.json to include "test": "c8 ava" in scripts
 - Create ava tests with c8 and supertest in /test (https://github.com/ioannisam/SEII/blob/main/test/routes.test.js)
-- In index.js:
+- In `index.js`:
 
 ```js
     module.exports = app;
@@ -63,7 +62,7 @@ The expected return CODE is:
 
 - Have k6 installed
 - Edit package.json to include "test:perf": "k6 run k6-tests/load-test.js && k6 run k6-tests/stress-test.js && k6 run k6-tests/spike-test.js" in scripts
-- add k6-test directory (spike.js, load.js or stress.js)
+- add k6-test directory (spike.js, load.js or stress.js, https://github.com/ioannisam/SEII/tree/main/k6-tests)
 - verify
 ```bash
     npm start
