@@ -49,7 +49,7 @@ The expected return CODE is:
 ```
 
 - Edit package.json to include "test": "c8 ava" in scripts
-- Create ava tests with c8 and supertest in /test
+- Create ava tests with c8 and supertest in /test (https://github.com/ioannisam/SEII/blob/main/test/routes.test.js)
 - In index.js:
 
 ```js
