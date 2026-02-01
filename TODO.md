@@ -5,6 +5,7 @@
 Go to: 
 - https://swagger-editor.issel.ee.auth.gr/ (generate nodejs sever with the .yml)
 - https://se2-exams.cyclopt.com/ (upload to see issues)
+- Install `OpenAPI (Swagger) Editor` vscode extention
 
 Run:
 ``` bash
@@ -18,6 +19,22 @@ Run:
 - Remove unused variables (void req; // for default.js)
 - Add comments (/* */ style to cheese density)
 
+- Update status code return values in DefaultService:
+```js
+    resolve(examples[Object.keys(examples)[0]]); // old
+```
+
+```js
+    resolve(utils.respondWithCode(CODE, examples[Object.keys(examples)[0]])); // new
+```
+
+The expected return CODE is:
+- GET -> 200
+- POST -> 201
+- PUT -> 200 204
+- DELETE -> 200 204
+(Use or 200 in all cases)
+
 ## TESTING
 
 ### ENDPOINTS
@@ -28,23 +45,15 @@ Run:
 ```
 
 - Edit package.json to include "test": "c8 ava" in scripts
-
 - Create ava tests with c8 and supertest in /test
-
 - In index.js:
+
 ```js
     module.exports = app;
     if (require.main === module) {
         ...
     }
 ```
-
-The expected return codes are:
-- GET -> 200
-- POST -> 201
-- PUT -> 200 204
-- DELETE -> 200 204
-(Use or 200 in all cases)
 
 ### PERFORMANCE
 

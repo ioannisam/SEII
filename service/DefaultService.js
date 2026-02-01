@@ -1,5 +1,7 @@
 'use strict';
 
+var utils = require('../utils/writer.js');
+
 
 /**
  * Delete an author
@@ -9,7 +11,7 @@
  **/
 exports.authorsAuthorIdDELETE = function() {
   return new Promise(function(resolve) {
-    resolve();
+    resolve(utils.respondWithCode(204, {}));
   });
 }
 
@@ -28,7 +30,7 @@ exports.authorsAuthorIdGET = function() {
   "id" : 0
 };
     if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
+      resolve(utils.respondWithCode(200, examples[Object.keys(examples)[0]]));
     } else {
       resolve();
     }
@@ -51,7 +53,7 @@ exports.authorsAuthorIdPUT = function() {
   "id" : 0
 };
     if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
+      resolve(utils.respondWithCode(200, examples[Object.keys(examples)[0]]));
     } else {
       resolve();
     }
@@ -75,7 +77,7 @@ exports.authorsGET = function() {
   "id" : 0
 } ];
     if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
+      resolve(utils.respondWithCode(200, examples[Object.keys(examples)[0]]));
     } else {
       resolve();
     }
@@ -97,7 +99,7 @@ exports.authorsPOST = function() {
   "id" : 0
 };
     if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
+      resolve(utils.respondWithCode(201, examples[Object.keys(examples)[0]]));
     } else {
       resolve();
     }
@@ -113,7 +115,7 @@ exports.authorsPOST = function() {
  **/
 exports.booksBookIdDELETE = function() {
   return new Promise(function(resolve) {
-    resolve();
+    resolve(utils.respondWithCode(204, {}));
   });
 }
 
@@ -135,7 +137,7 @@ exports.booksBookIdGET = function() {
   "author_id" : 6
 };
     if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
+      resolve(utils.respondWithCode(200, examples[Object.keys(examples)[0]]));
     } else {
       resolve();
     }
@@ -161,7 +163,7 @@ exports.booksBookIdPUT = function() {
   "author_id" : 6
 };
     if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
+      resolve(utils.respondWithCode(200, examples[Object.keys(examples)[0]]));
     } else {
       resolve();
     }
@@ -191,7 +193,7 @@ exports.booksGET = function() {
   "author_id" : 6
 } ];
     if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
+      resolve(utils.respondWithCode(200, examples[Object.keys(examples)[0]]));
     } else {
       resolve();
     }
@@ -216,7 +218,7 @@ exports.booksPOST = function() {
   "author_id" : 6
 };
     if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
+      resolve(utils.respondWithCode(201, examples[Object.keys(examples)[0]]));
     } else {
       resolve();
     }
@@ -232,7 +234,7 @@ exports.booksPOST = function() {
  **/
 exports.categoriesCategoryIdDELETE = function() {
   return new Promise(function(resolve) {
-    resolve();
+    resolve(utils.respondWithCode(204, {}));
   });
 }
 
@@ -251,7 +253,7 @@ exports.categoriesCategoryIdGET = function() {
   "id" : 0
 };
     if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
+      resolve(utils.respondWithCode(200, examples[Object.keys(examples)[0]]));
     } else {
       resolve();
     }
@@ -274,7 +276,7 @@ exports.categoriesCategoryIdPUT = function() {
   "id" : 0
 };
     if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
+      resolve(utils.respondWithCode(200, examples[Object.keys(examples)[0]]));
     } else {
       resolve();
     }
@@ -298,7 +300,7 @@ exports.categoriesGET = function() {
   "id" : 0
 } ];
     if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
+      resolve(utils.respondWithCode(200, examples[Object.keys(examples)[0]]));
     } else {
       resolve();
     }
@@ -320,7 +322,7 @@ exports.categoriesPOST = function() {
   "id" : 0
 };
     if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
+      resolve(utils.respondWithCode(201, examples[Object.keys(examples)[0]]));
     } else {
       resolve();
     }

@@ -20,11 +20,11 @@ test('GET /books/{bookId} returns 200', async (t) => {
 });
 
 // test POST /books (creates a new book)
-test('POST /books returns 200 or 201', async (t) => {
+test('POST /books returns 201', async (t) => {
   const response = await request(app)
     .post('/books')
     .send({ title: 'Test Book', author_id: 1, category_id: 1 });
-  t.true(response.status === 200 || response.status === 201);
+  t.is(response.status, 201);
   t.truthy(response.body);
   t.true(typeof response.body === 'object');
 });
@@ -40,9 +40,9 @@ test('PUT /books/{bookId} returns 200', async (t) => {
 });
 
 // test DELETE /books/{bookId} (deletes a book by ID)
-test('DELETE /books/{bookId} returns 200 or 204', async (t) => {
+test('DELETE /books/{bookId} returns 204', async (t) => {
   const response = await request(app).delete('/books/1');
-  t.true(response.status === 200 || response.status === 204);
+  t.is(response.status, 204);
 });
 
 // Authors routes
@@ -63,11 +63,11 @@ test('GET /authors/{authorId} returns 200', async (t) => {
 });
 
 // test POST /authors (creates a new author)
-test('POST /authors returns 200 or 201', async (t) => {
+test('POST /authors returns 201', async (t) => {
   const response = await request(app)
     .post('/authors')
     .send({ name: 'Test Author' });
-  t.true(response.status === 200 || response.status === 201);
+  t.is(response.status, 201);
   t.truthy(response.body);
   t.true(typeof response.body === 'object');
 });
@@ -83,9 +83,9 @@ test('PUT /authors/{authorId} returns 200', async (t) => {
 });
 
 // test DELETE /authors/{authorId} (deletes an author by ID)
-test('DELETE /authors/{authorId} returns 200 or 204', async (t) => {
+test('DELETE /authors/{authorId} returns 204', async (t) => {
   const response = await request(app).delete('/authors/1');
-  t.true(response.status === 200 || response.status === 204);
+  t.is(response.status, 204);
 });
 
 // Categories routes
@@ -106,11 +106,11 @@ test('GET /categories/{categoryId} returns 200', async (t) => {
 });
 
 // test POST /categories (creates a new category)
-test('POST /categories returns 200 or 201', async (t) => {
+test('POST /categories returns 201', async (t) => {
   const response = await request(app)
     .post('/categories')
     .send({ name: 'Test Category' });
-  t.true(response.status === 200 || response.status === 201);
+  t.is(response.status, 201);
   t.truthy(response.body);
   t.true(typeof response.body === 'object');
 });
@@ -126,7 +126,7 @@ test('PUT /categories/{categoryId} returns 200', async (t) => {
 });
 
 // test DELETE /categories/{categoryId} (deletes a category by ID)
-test('DELETE /categories/{categoryId} returns 200 or 204', async (t) => {
+test('DELETE /categories/{categoryId} returns 204', async (t) => {
   const response = await request(app).delete('/categories/1');
-  t.true(response.status === 200 || response.status === 204);
+  t.is(response.status, 204);
 });
