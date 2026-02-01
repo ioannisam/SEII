@@ -32,6 +32,11 @@ Run:
     resolve(utils.respondWithCode(204, {})); //for DELETE
 ```
 
+Also add this on the top:
+```js
+    const utils = require('../utils/writer.js');
+```
+
 The expected return CODE is:
 - GET -> 200
 - POST -> 201
