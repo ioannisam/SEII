@@ -28,6 +28,10 @@ Run:
     resolve(utils.respondWithCode(CODE, examples[Object.keys(examples)[0]])); // new
 ```
 
+```js
+resolve(utils.respondWithCode(204, {})); //for delete
+```
+
 The expected return CODE is:
 - GET -> 200
 - POST -> 201
